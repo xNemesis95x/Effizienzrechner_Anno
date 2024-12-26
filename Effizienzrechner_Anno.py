@@ -1,3 +1,8 @@
+def procesor_count_calculator (manufacturer_time, processor_time):
+    lead_time = manufacturer_time / processor_time
+    processor_count = lead_time * manufacturer_time
+    return processor_count
+
 def ein_Verarbeitendesgebaeude ():
     while True:
             dauer_herstellendesgebaeude = int(input("Gib die Dauer des Herstellendengebäudes in Sekunden an: "))
@@ -6,8 +11,7 @@ def ein_Verarbeitendesgebaeude ():
             menge_herstellendergebaeude = int (input ("Gib die Anzahl des Herstellendengebäudes ein für die die Berechnung durchgeführt werden soll. "))
 
             while True:
-                durchlaufzeit = dauer_herstellendesgebaeude / dauer_verarbeitendesgebaeude
-                menge_verarbeitendegebaeude = durchlaufzeit * menge_herstellendergebaeude
+                menge_verarbeitendegebaeude = procesor_count_calculator(dauer_herstellendesgebaeude, dauer_verarbeitendesgebaeude)
                 if menge_verarbeitendegebaeude.is_integer():
                     print(f"Menge Herstellendesgebäude ist: {int (menge_herstellendergebaeude)}")
                     print(f"Menge Verarbeitendegebäude ist: {int(menge_verarbeitendegebaeude)}")
@@ -27,11 +31,9 @@ def zwei_Verarbeitendegebaeude ():
             menge_herstellendergebaeude = int (input ("Gib die Anzahl des Herstellendengebäudes ein für die die Berechnung durchgeführt werden soll. "))
 
             while True:
-                durchlaufzeit_1 = dauer_herstellendesgebaeude / dauer_verarbeitendesgebaeude_1
-                menge_verarbeitendegebaeude_1 = durchlaufzeit_1 * menge_herstellendergebaeude
+                menge_verarbeitendegebaeude_1 = procesor_count_calculator(dauer_herstellendesgebaeude, dauer_verarbeitendesgebaeude_1)
                 if menge_verarbeitendegebaeude_1.is_integer():
-                    durchlaufzeit_2 = dauer_verarbeitendesgebaeude_1 / dauer_verarbeitendesgebaeude_2
-                    menge_verarbeitendegebaeude_2 = durchlaufzeit_2 * menge_verarbeitendegebaeude_1
+                    menge_verarbeitendegebaeude_2 = procesor_count_calculator(dauer_verarbeitendesgebaeude_1, dauer_verarbeitendesgebaeude_2)
                     if menge_verarbeitendegebaeude_2.is_integer():
                         print(f"Menge Herstellendesgebäude ist: {int(menge_herstellendergebaeude)}")
                         print(f"Menge der ersten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_1)}")
