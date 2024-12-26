@@ -1,6 +1,6 @@
-def procesor_count_calculator (manufacturer_time, processor_time):
+def procesor_count_calculator (manufacturer_time, processor_time, manufacturer_count):
     lead_time = manufacturer_time / processor_time
-    processor_count = lead_time * manufacturer_time
+    processor_count = lead_time * manufacturer_count
     return processor_count
 
 def ein_Verarbeitendesgebaeude ():
@@ -11,7 +11,7 @@ def ein_Verarbeitendesgebaeude ():
             menge_herstellendergebaeude = int (input ("Gib die Anzahl des Herstellendengebäudes ein für die die Berechnung durchgeführt werden soll. "))
 
             while True:
-                menge_verarbeitendegebaeude = procesor_count_calculator(dauer_herstellendesgebaeude, dauer_verarbeitendesgebaeude)
+                menge_verarbeitendegebaeude = procesor_count_calculator(dauer_herstellendesgebaeude, dauer_verarbeitendesgebaeude, menge_herstellendergebaeude)
                 if menge_verarbeitendegebaeude.is_integer():
                     print(f"Menge Herstellendesgebäude ist: {int (menge_herstellendergebaeude)}")
                     print(f"Menge Verarbeitendegebäude ist: {int(menge_verarbeitendegebaeude)}")
@@ -31,9 +31,9 @@ def zwei_Verarbeitendegebaeude ():
             menge_herstellendergebaeude = int (input ("Gib die Anzahl des Herstellendengebäudes ein für die die Berechnung durchgeführt werden soll. "))
 
             while True:
-                menge_verarbeitendegebaeude_1 = procesor_count_calculator(dauer_herstellendesgebaeude, dauer_verarbeitendesgebaeude_1)
+                menge_verarbeitendegebaeude_1 = procesor_count_calculator(dauer_herstellendesgebaeude, dauer_verarbeitendesgebaeude_1, menge_herstellendergebaeude)
                 if menge_verarbeitendegebaeude_1.is_integer():
-                    menge_verarbeitendegebaeude_2 = procesor_count_calculator(dauer_verarbeitendesgebaeude_1, dauer_verarbeitendesgebaeude_2)
+                    menge_verarbeitendegebaeude_2 = procesor_count_calculator(dauer_verarbeitendesgebaeude_1, dauer_verarbeitendesgebaeude_2, menge_verarbeitendegebaeude_1)
                     if menge_verarbeitendegebaeude_2.is_integer():
                         print(f"Menge Herstellendesgebäude ist: {int(menge_herstellendergebaeude)}")
                         print(f"Menge der ersten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_1)}")
