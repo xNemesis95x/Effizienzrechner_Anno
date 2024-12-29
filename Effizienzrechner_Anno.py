@@ -34,9 +34,41 @@ def zwei_Verarbeitendegebaeude ():
                     menge_verarbeitendegebaeude_2 = durchlaufzeit_2 * menge_verarbeitendegebaeude_1
                     if menge_verarbeitendegebaeude_2.is_integer():
                         print(f"Menge Herstellendesgebäude ist: {int(menge_herstellendergebaeude)}")
-                        print(f"Menge der ersten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_1)}")
-                        print(f"Menge der ersten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_2)}")
+                        print(f"Menge des ersten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_1)}")
+                        print(f"Menge des zweiten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_2)}")
                         break
+                menge_herstellendergebaeude += 1
+            erneut = input ("Möchtest du diese Rechnung für eine weiter Produktionskette durchführen? Y/N: ")
+            if erneut != "Y":
+                break
+
+def drei_Verarbeitendegebaeude ():
+     while True:
+            dauer_herstellendesgebaeude = int(input("Gib die Dauer des Herstellendengebäudes in Sekunden an: "))
+            dauer_verarbeitendesgebaeude_1 = int(input("Gib die Dauer des ersten Verarbeitendengebäudes in Sekunden an: "))
+            dauer_verarbeitendesgebaeude_2 = int(input("Gib die Dauer des zweiten Verarbeitendengebäudes in Sekunden an: "))
+            dauer_verarbeitendesgebaeude_3 = int(input("Gib die Dauer des dritten Verarbeitendengebäudes in Sekunden an: "))
+            menge_verarbeitendegebaeude_1 = None
+            menge_verarbeitendegebaeude_2 = None
+            menge_verarbeitendegebaeude_3 = None
+            menge_herstellendergebaeude = int (input ("Gib die Anzahl des Herstellendengebäudes ein für die die Berechnung durchgeführt werden soll. "))
+
+            while True:
+                durchlaufzeit_1 = dauer_herstellendesgebaeude / dauer_verarbeitendesgebaeude_1
+                menge_verarbeitendegebaeude_1 = durchlaufzeit_1 * menge_herstellendergebaeude
+                if menge_verarbeitendegebaeude_1.is_integer():
+                    durchlaufzeit_2 = dauer_verarbeitendesgebaeude_1 / dauer_verarbeitendesgebaeude_2
+                    menge_verarbeitendegebaeude_2 = durchlaufzeit_2 * menge_verarbeitendegebaeude_1
+                    if menge_verarbeitendegebaeude_2.is_integer():
+                        durchlaufzeit_3 = dauer_verarbeitendesgebaeude_2 / dauer_verarbeitendesgebaeude_3
+                        menge_verarbeitendegebaeude_3 = durchlaufzeit_3 * menge_verarbeitendegebaeude_2
+                        if menge_verarbeitendegebaeude_3.is_integer ():
+                            print(f"Menge Herstellendesgebäude ist: {int(menge_herstellendergebaeude)}")
+                            print(f"Menge des ersten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_1)}")
+                            print(f"Menge des zweiten Verarbeitendegebäudes ist: {int (menge_verarbeitendegebaeude_2)}")
+                            print(f"Menge des dritten Verarbeitendengebäudes ist: {int (menge_verarbeitendegebaeude_3)}")
+
+                            break
                 menge_herstellendergebaeude += 1
             erneut = input ("Möchtest du diese Rechnung für eine weiter Produktionskette durchführen? Y/N: ")
             if erneut != "Y":
@@ -50,6 +82,8 @@ while True:
         ein_Verarbeitendesgebaeude ()
     elif Anzahl_Verarbeitendergebaeude == 2:
         zwei_Verarbeitendegebaeude ()
+    elif Anzahl_Verarbeitendergebaeude == 3:
+         drei_Verarbeitendegebaeude ()
 
     erneut = input ("Möchtest du die Rechnung für eine weiter Produktionskette durchführen? Y/N: ")
     if erneut != "Y":
